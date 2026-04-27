@@ -40,6 +40,10 @@ async def on_message(message):
     if "hey wake up" in message.content.lower():
         await message.channel.send("yes")
         print(f"💬 偵測到喚醒訊息，已回覆 yes（頻道：{message.channel.name}）")
+        
+    if client.user.mentioned_in(message):
+        await message.channel.send("yes")
+        print(f"💬 偵測到 mention，已回覆 yes（頻道：{message.channel.name}）")
 
 @client.event
 async def on_voice_state_update(member, before, after):
