@@ -1,0 +1,8 @@
+[build]
+builder = "nixpacks"
+
+[build.nixpacksPlan.phases.setup]
+nixPkgs = ["libsodium", "python3"]
+
+[deploy]
+startCommand = "python bot.py"
