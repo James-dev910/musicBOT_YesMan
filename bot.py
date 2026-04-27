@@ -37,7 +37,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.strip().lower() == "hey wake up!":
+    if "hey wake up" in message.content.lower():
         await message.channel.send("yes")
         print(f"💬 偵測到喚醒訊息，已回覆 yes（頻道：{message.channel.name}）")
 
